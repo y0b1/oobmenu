@@ -5,9 +5,6 @@ tablet app that recreates the printed menu on a 10 inch Android tablet, plus a p
 admin panel so staff can change prices, mark drinks sold out, and cut off a tab for the day
 without a developer or a backend.
 
-Non transactional by design: no cart, no checkout, no accounts, no network calls. It browses,
-and it is edited on the device.
-
 ## Features
 
 ### Customer view
@@ -93,9 +90,8 @@ lib/
 
 ## Brand
 
-Colors, type scale, spacing, and radii live in `lib/theme/` and are the single source of truth.
-The palette is cream and navy with orange accents. No dark mode: the cream and navy is the
-identity.
+Colors, type scale, spacing, and radii live in `lib/theme/` and are the single source.
+The palette is cream and navy with orange accents. No dark mode.
 
 Prices format through `lib/utils/peso.dart`: `formatPeso(210)` gives `₱ 210` and
 `formatPeso(360, withDecimals: true)` gives `₱ 360.00`.
