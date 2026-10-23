@@ -1,3 +1,5 @@
+> **Offline ordering and cashier POS:** The customer menu stays here. The separate cashier app is in [`oobpos/`](oobpos/README.md). See its README for building both APKs, pairing over a tablet hotspot, manual payment approval and recovery.
+
 # OOB Menu
 
 A digital menu for **OOB (Out of Boredom)**, a coffee and matcha bar in Davao. It is a Flutter
@@ -105,3 +107,9 @@ sensitive, so treat it as a staff convenience lock rather than real access contr
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+POS reports, audit storage and POS-only custom orders are documented in [the cashier guide](oobpos/README.md#reports-and-pos-only-custom-orders-12).
+
+### Before live APK handover
+
+The development POS currently uses a temporary sales-day testing pause. Re-enable **Reports → Automatic cutoff → Enforce sales day** and confirm automatic cutoff at **20:30** before live use. Fresh installs default to enabled; updates preserve local settings. See [POS release reminder](oobpos/README.md#release-reminder-re-enable-sales-day).

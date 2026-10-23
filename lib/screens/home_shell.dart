@@ -6,6 +6,8 @@ import '../theme/oob_colors.dart';
 import '../widgets/bottom_tab_bar.dart';
 import '../widgets/cutoff_overlay.dart';
 import 'matcha_screen.dart';
+import '../ordering/order_screen.dart';
+import '../ordering/order_client.dart';
 import 'coffee_screen.dart';
 import 'most_ordered_screen.dart';
 
@@ -38,6 +40,15 @@ class HomeShell extends ConsumerWidget {
             ),
             const MostOrderedScreen(),
           ],
+        ),
+      ),
+      floatingActionButton: ListenableBuilder(
+        listenable: OrderClient.instance,
+        builder: (context, _) => FloatingActionButton.extended(
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute<void>(builder: (_) => const OrderScreen())),
+          icon: const Icon(Icons.receipt_long_outlined),
+          label: Text('Order · ${OrderClient.instance.connection}'),
         ),
       ),
       bottomNavigationBar: const BottomTabBar(),

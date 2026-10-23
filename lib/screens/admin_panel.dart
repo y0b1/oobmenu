@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import '../state/menu_lock_settings.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/models.dart';
+import '../ordering/order_screen.dart';
+import '../theme/transaction_theme.dart';
 import '../state/availability.dart';
 import '../state/menu_state.dart';
 import '../state/most_ordered.dart';
@@ -96,6 +100,66 @@ class _AdminPanelState extends ConsumerState<AdminPanel> {
     }
   }
 
+  Future<void> _changeUnlockCode() async {
+    final code = TextEditingController();
+    final confirmation = TextEditingController();
+    var error = '';
+    var saving = false;
+    await showDialog<void>(
+        context: context,
+        builder: (context) => StatefulBuilder(
+              builder: (context, update) => AlertDialog(
+                title: const Text('Change menu unlock code'),
+                content: Column(mainAxisSize: MainAxisSize.min, children: [
+                  for (final entry in {
+                    code: 'New 4-digit code',
+                    confirmation: 'Confirm code'
+                  }.entries)
+                    TextField(
+                        controller: entry.key,
+                        obscureText: true,
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly,
+                          LengthLimitingTextInputFormatter(4)
+                        ],
+                        decoration: InputDecoration(labelText: entry.value)),
+                  if (error.isNotEmpty) Text(error),
+                ]),
+                actions: [
+                  TextButton(
+                      onPressed: saving ? null : () => Navigator.pop(context),
+                      child: const Text('Cancel')),
+                  FilledButton(
+                      onPressed: saving
+                          ? null
+                          : () async {
+                              if (code.text != confirmation.text ||
+                                  code.text.length != 4) {
+                                update(() => error =
+                                    'Enter the same four-digit code twice.');
+                                return;
+                              }
+                              update(() => saving = true);
+                              try {
+                                await MenuLockSettings.instance
+                                    .changeCode(code.text);
+                                if (context.mounted) Navigator.pop(context);
+                              } catch (e) {
+                                if (context.mounted) {
+                                  update(() {
+                                    error = '$e';
+                                    saving = false;
+                                  });
+                                }
+                              }
+                            },
+                      child: const Text('Save code')),
+                ],
+              ),
+            ));
+  }
+
   Future<void> _changePassword() async {
     final controller = TextEditingController();
 
@@ -173,6 +237,21 @@ class _AdminPanelState extends ConsumerState<AdminPanel> {
               .copyWith(color: OobColors.oobWhite, fontSize: 16),
         ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.pin_outlined, size: 20),
+            tooltip: 'Change menu unlock code',
+            onPressed: _changeUnlockCode,
+          ),
+          IconButton(
+            icon: const Icon(Icons.wifi, size: 20),
+            tooltip: 'POS connection',
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                    builder: (_) => Theme(
+                        data: transactionTheme(Theme.of(context)),
+                        child: const MenuConnectionScreen()))),
+          ),
           IconButton(
             icon: const Icon(Icons.lock_outline, size: 20),
             onPressed: _changePassword,

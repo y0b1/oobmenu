@@ -1,7 +1,7 @@
 name: oob_menu
 description: OOB Menu - Out of Boredom digital menu experience
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.2.2+7
 
 environment:
   sdk: '>=3.5.0 <4.0.0'
@@ -17,6 +17,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   vector_math: ^2.1.4
   haptic_feedback: ^0.5.1
+  crypto: ^3.0.6
   shared_preferences: ^2.3.3
 
 dev_dependencies:
@@ -29,3 +30,5 @@ flutter:
   assets:
     - assets/google_fonts/
     - assets/images/
+    - assets/catalog.json
+    - assets/font_licenses/

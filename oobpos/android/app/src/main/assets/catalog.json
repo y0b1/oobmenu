@@ -1,0 +1,304 @@
+{
+  "version": 2,
+  "products": [
+    {
+      "id": "handpicked-matcha",
+      "name": "Handpicked Matcha",
+      "description": "A 200 year old craft preserved in modern day",
+      "category": "handpicked_matcha",
+      "price": 36000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "black-sesame-matcha",
+      "name": "Black Sesame Matcha",
+      "description": "Signature Black Sesame cream",
+      "category": "specialty_matcha",
+      "price": 26000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "himalayan-matcha",
+      "name": "Himalayan Matcha",
+      "description": "Salted Cream",
+      "category": "specialty_matcha",
+      "price": 26000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "matcha-cho",
+      "name": "Matcha-cho",
+      "description": "Matcha and Chocolate",
+      "category": "specialty_matcha",
+      "price": 26000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "strawberry-matcha",
+      "name": "Strawberry Matcha",
+      "description": "Signature Strawberry jam",
+      "category": "specialty_matcha",
+      "price": 29000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "earl-grey-matcha",
+      "name": "Earl Grey Matcha",
+      "description": "Matcha and Earl Grey tea",
+      "category": "specialty_matcha",
+      "price": 26000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "houjicha-latte",
+      "name": "Houjicha Latte",
+      "description": "Roasted Matcha",
+      "category": "houjicha",
+      "price": 21000,
+      "modifiers": []
+    },
+    {
+      "id": "dirty-houjicha",
+      "name": "Dirty Houjicha",
+      "description": "Espresso and Roasted Matcha",
+      "category": "specialty_houjicha",
+      "price": 22000,
+      "modifiers": []
+    },
+    {
+      "id": "himalayan-houjicha",
+      "name": "Himalayan Houjicha",
+      "description": "Houjicha and Salted cream",
+      "category": "specialty_houjicha",
+      "price": 24000,
+      "modifiers": []
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "description": "Espresso and milk",
+      "category": "coffee_milk",
+      "price": 16000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "spanish-latte",
+      "name": "Spanish Latte",
+      "description": "Espresso and sweetened milk",
+      "category": "coffee_milk",
+      "price": 17000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "mocha",
+      "name": "Mocha",
+      "description": "Espresso, chocolate, and milk",
+      "category": "coffee_milk",
+      "price": 18000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "dirty-matcha",
+      "name": "Dirty Matcha",
+      "description": "Espresso, Matcha, and oat milk",
+      "category": "coffee_milk",
+      "price": 22000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "description": "Espresso and H₂O",
+      "category": "coffee_no_milk",
+      "price": 14000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "tonic-espresso",
+      "name": "Tonic Espresso",
+      "description": "Espresso and sparkling water",
+      "category": "coffee_no_milk",
+      "price": 17000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "eclipse",
+      "name": "Eclipse",
+      "description": "Espresso and Mango",
+      "category": "specialty_coffee",
+      "price": 19000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "newton",
+      "name": "Newton",
+      "description": "Espresso and Apple",
+      "category": "specialty_coffee",
+      "price": 19000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "black-sesame-latte",
+      "name": "Black Sesame Latte",
+      "description": "Signature Black Sesame cream",
+      "category": "specialty_coffee",
+      "price": 19000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "himalayan-latte",
+      "name": "Himalayan Latte",
+      "description": "Salted Cream",
+      "category": "specialty_coffee",
+      "price": 19000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "sol",
+      "name": "Sol",
+      "description": "Mango, Pomegranate, Lemon",
+      "category": "specialty_coffee",
+      "price": 20000,
+      "modifiers": [
+        "extra-shot",
+        "large"
+      ]
+    },
+    {
+      "id": "powder-oobBlend-light",
+      "name": "OOB Level 1",
+      "description": "Matcha Latte",
+      "category": "matcha_latte",
+      "price": 21000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "powder-oobBlend-balanced",
+      "name": "OOB Level 2",
+      "description": "Matcha Latte",
+      "category": "matcha_latte",
+      "price": 24000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "powder-oobBlend-umami",
+      "name": "OOB Level 3",
+      "description": "Matcha Latte",
+      "category": "matcha_latte",
+      "price": 27000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "powder-tsuki-light",
+      "name": "Tsuki Level 1",
+      "description": "Matcha Latte",
+      "category": "matcha_latte",
+      "price": 23000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "powder-tsuki-balanced",
+      "name": "Tsuki Level 2",
+      "description": "Matcha Latte",
+      "category": "matcha_latte",
+      "price": 26000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    },
+    {
+      "id": "powder-tsuki-umami",
+      "name": "Tsuki Level 3",
+      "description": "Matcha Latte",
+      "category": "matcha_latte",
+      "price": 29000,
+      "modifiers": [
+        "cold-whisk",
+        "traditional"
+      ]
+    }
+  ],
+  "modifiers": [
+    {
+      "id": "extra-shot",
+      "name": "More caffeine!",
+      "price": 5000
+    },
+    {
+      "id": "large",
+      "name": "Make it big",
+      "price": 5000
+    },
+    {
+      "id": "cold-whisk",
+      "name": "Cold Whisk",
+      "price": 0
+    },
+    {
+      "id": "traditional",
+      "name": "Traditional",
+      "price": 0
+    }
+  ]
+}

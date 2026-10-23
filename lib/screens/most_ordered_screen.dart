@@ -67,9 +67,12 @@ class MostOrderedScreen extends ConsumerWidget {
     );
   }
 
-  void _tryUnlock(BuildContext context, WidgetRef ref, String input) {
-    final password = ref.read(adminPasswordProvider);
-    if (input == password) {
+  Future<void> _tryUnlock(
+      BuildContext context, WidgetRef ref, String input) async {
+    final accepted =
+        await ref.read(adminPasswordProvider.notifier).verify(input);
+    if (!context.mounted) return;
+    if (accepted) {
       Navigator.of(context).push(
         MaterialPageRoute<void>(builder: (_) => const AdminPanel()),
       );

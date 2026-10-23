@@ -6,7 +6,7 @@ import '../data/menu_data.dart';
 
 const _menuKey = 'menu_state';
 const _passwordKey = 'admin_password';
-const _defaultPassword = 'oob123';
+const _defaultPassword = 'oob12345';
 
 final adminPasswordProvider =
     NotifierProvider<AdminPasswordNotifier, String>(AdminPasswordNotifier.new);
@@ -21,7 +21,15 @@ class AdminPasswordNotifier extends Notifier<String> {
   Future<void> _load() async {
     final prefs = await SharedPreferences.getInstance();
     final saved = prefs.getString(_passwordKey);
-    if (saved != null) state = saved;
+    if (saved != null && saved != 'oob123') state = saved;
+    if (saved == 'oob123') {
+      await prefs.setString(_passwordKey, _defaultPassword);
+    }
+  }
+
+  Future<bool> verify(String password) async {
+    await _load();
+    return state == password;
   }
 
   Future<void> update(String password) async {
@@ -131,8 +139,7 @@ class MenuState {
             .toList(),
         handpickedMatcha:
             MenuItem.fromJson(json['handpickedMatcha'] as Map<String, dynamic>),
-        houjicha:
-            MenuItem.fromJson(json['houjicha'] as Map<String, dynamic>),
+        houjicha: MenuItem.fromJson(json['houjicha'] as Map<String, dynamic>),
         oobBlendPowders: (json['oobBlendPowders'] as List)
             .map((e) => PowderOption.fromJson(e as Map<String, dynamic>))
             .toList(),
@@ -170,8 +177,7 @@ class MenuStateNotifier extends Notifier<MenuState> {
     final saved = prefs.getString(_menuKey);
     if (saved != null) {
       try {
-        state = MenuState.fromJson(
-            jsonDecode(saved) as Map<String, dynamic>);
+        state = MenuState.fromJson(jsonDecode(saved) as Map<String, dynamic>);
       } catch (_) {}
     }
   }
